@@ -37,6 +37,7 @@
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Security</x:String>
       <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -93,13 +94,13 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="877.3333333333333,984" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="877.3333333333333,2083.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="518,961.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="521.3333333333334,2060.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="City_data" />
       </Sequence.Variables>
@@ -108,24 +109,33 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard CloseMode="Never" DisplayName="Browser" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="484,878.6666666666666" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" IsIncognito="True" OpenMode="IfNotOpen" ScopeGuid="db628a63-8c58-46bb-a956-99c83cd13f8f">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Zillow: Real Estate, Apartments, Mortgages &amp; Home Values" sap:VirtualizedContainerService.HintSize="487.3333333333333,1978" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" IsIncognito="True" OpenMode="IfNotOpen" ScopeGuid="af4aee50-4aa0-468a-ae62-dbe51eb2e2c6" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,636.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="453.3333333333333,1736" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="416,278" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter an address, neighborhood, city, or ZIP code " Title="Get Location">
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="416,278" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter an address, neighborhood, city, or ZIP code" Title="Get  Info">
                 <ui:InputDialog.Result>
                   <OutArgument x:TypeArguments="x:String">[City_data]</OutArgument>
                 </ui:InputDialog.Result>
               </ui:InputDialog>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" ClipboardMode="Never" DisplayName="Type Into" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,296" sap2010:WorkflowViewState.IdRef="NTypeInto_2" Version="V4">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'clear search text butto…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,292.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="WindowMessages" ScopeIdentifier="af4aee50-4aa0-468a-ae62-dbe51eb2e2c6" Text="[City_data + &quot;[k(Enter)]&quot;]" Version="V4">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="zillow.com" CVScreenId="3b00161d-1bed-42dc-9838-73d94d7fdd18" DesignTimeRectangle="102, 693, 605, 108" DesignTimeScaleFactor="1.5" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' placeholder='Enter an address, neighborhood, city, or ZIP code' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' placeholder='Enter an address, neighborhood, city, or ZIP code' type='text' class='StyledFormControl-c11n-8-106-0__sc-w61kvv-0 igfrFI Input-c11n-8-106-0__sc-4ry0fw-0 ljYGJX' aaname='clear search text buttonSubmit Search' /&gt;" Guid="e08f27c4-f74f-4cef-a54a-468f7e1e0c9c" InformativeScreenshot="1039d3bb78c73866cf7cb61d6014751d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Zillow: Real Estate, Apartments, Mortgages &amp;amp; Home Values' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="707, 693, 115, 108" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='StyledAdornment-c11n-8-106-0__sc-1h2m3pa-0 AdornmentRight-c11n-8-106-0__sc-46k37c-0 fdWxSd hGKwpM SearchBoxInput__StyledSearchBoxAdornment-sxp-sb-8-106-0__sc-1hknwe6-0 cGaWQm' aaname='' check:innerText='Submit Search' /&gt;" Guid="4e22e6c8-68da-4221-b658-d8b42a0b6e6c" SearchSteps="Selector, FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
                 <uix:NTypeInto.VerifyOptions>
                   <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
                     <uix:VerifyExecutionTypeIntoOptions.Retry>
@@ -137,12 +147,89 @@
                   </uix:VerifyExecutionTypeIntoOptions>
                 </uix:NTypeInto.VerifyOptions>
               </uix:NTypeInto>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'For sale'" sap:VirtualizedContainerService.HintSize="416,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="af4aee50-4aa0-468a-ae62-dbe51eb2e2c6" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="zillow.com" CVScreenId="8aa87d47-eed2-4006-95d9-a66a9deb0cba" DesignTimeRectangle="810, 602, 300, 65" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='For sale' tag='BUTTON' innertext='For sale' visibleinnertext='For sale' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='For sale' tag='BUTTON' innertext='For sale' visibleinnertext='For sale' type='' class='StyledButton-c11n-8-106-0__sc-iv7357-0 dHXgCj' check:text='For sale' /&gt;" Guid="a955ff9f-69b3-4d99-9447-8000295b78cb" InformativeScreenshot="32925c2e805f5bca12f45182e23532e2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Zillow: Real Estate, Apartments, Mortgages &amp;amp; Home Values' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Home Type'" sap:VirtualizedContainerService.HintSize="416,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="af4aee50-4aa0-468a-ae62-dbe51eb2e2c6" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="zillow.com/homes" CVScreenId="50d743b9-df51-422d-8822-c2d43b9f85d2" DesignTimeRectangle="1424, 322, 180, 56" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;webctrl parentid='home-type' tag='BUTTON' aaname='Home Type' innertext='Home Type' visibleinnertext='Home Type' /&gt;" Guid="d4a8a012-62dc-4852-844f-b2606a61b475" InformativeScreenshot="f61d711048cad89f86b59ec76666406a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* | Zillow' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Deselect All'" sap:VirtualizedContainerService.HintSize="416,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="af4aee50-4aa0-468a-ae62-dbe51eb2e2c6" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="zillow.com/homes/for_sale/7518_rid" CVScreenId="86f1fc8e-d1a1-473f-953e-6baa39bf38dc" DesignTimeRectangle="1448, 462, 170, 36" DesignTimeScaleFactor="1.5" ElementType="Icon" FullSelectorArgument="&lt;webctrl aaname='Deselect All' tag='BUTTON' type='button' innertext='Deselect All' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Deselect All' tag='BUTTON' type='button' innertext='Deselect All' class='StyledTextButton-c11n-8-109-3__sc-1nwmfqo-0 fVlvPS' check:text='Deselect All' /&gt;" Guid="0999c942-f10f-41b9-852f-1c8a7a9b9377" InformativeScreenshot="7efe32b6680cb22f71f9c6275a230291.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Ukiah CA Real Estate - Ukiah CA Homes For Sale | Zillow' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'Houses'" sap:VirtualizedContainerService.HintSize="416,192" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="af4aee50-4aa0-468a-ae62-dbe51eb2e2c6" Version="V4">
+                <uix:NCheck.Target>
+                  <uix:TargetAnchorable BrowserURL="zillow.com/homes/for_sale/7518_rid" CVScreenId="b8b74544-8f88-41f3-bfd3-37982df1f228" DesignTimeRectangle="1451, 540, 30, 30" DesignTimeScaleFactor="1.5" ElementType="CheckBox" FullSelectorArgument="&lt;webctrl id='home-type_isSingleFamily' tag='INPUT' aaname='Houses ' type='checkbox' /&gt;" FuzzySelectorArgument="&lt;webctrl id='home-type_isSingleFamily' tag='INPUT' aaname='Houses ' type='checkbox' class='StyledFormControl-c11n-8-109-3__sc-w61kvv-0 iVoxNw StyledCheckbox-c11n-8-109-3__sc-13jdanj-0 vmLum StyledFilterCheckbox__StyledCheckbox-srp-8-109-3__sc-9abn3d-2 hsiQpn' /&gt;" Guid="c0ce4d76-1ed9-4abf-94fd-807f38e1de53" ImageBase64="" InformativeScreenshot="6b1718b73dc0bba082628d979662b1eb.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Ukiah CA Real Estate - Ukiah CA Homes For Sale | Zillow' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target CVScreenId="b8b74544-8f88-41f3-bfd3-37982df1f228" CvTextArea="1493, 542, 82, 21" CvTextArgument="Houses" CvType="Text" DesignTimeRectangle="1481, 534, 102, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Houses ' tag='LABEL' type='' class='StyledLabel-c11n-8-109-3__sc-14wqmdp-0 jmZqPk short-label' check:innerText='Houses' /&gt;" Guid="42da1178-ffbc-4be1-8cb0-36eaf8092a78" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NCheck.Target>
+              </uix:NCheck>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Apply'" sap:VirtualizedContainerService.HintSize="416,222.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="af4aee50-4aa0-468a-ae62-dbe51eb2e2c6" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="zillow.com/ukiah-ca/houses" CVScreenId="99b33a9b-e66e-45d9-87aa-799bf8ed4b4e" DesignTimeRectangle="1448, 920, 267, 65" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Apply' parentid='home-type' tag='BUTTON' innertext='Apply' visibleinnertext='Apply' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Apply' parentid='home-type' tag='BUTTON' innertext='Apply' visibleinnertext='Apply' type='' class='StyledButton-c11n-8-109-3__sc-iv7357-0 eFeCOZ' check:text='Apply' /&gt;" Guid="f3937576-d7f5-4b2b-9729-84c37331f217" InformativeScreenshot="5db5769cc869fbeed24c0847bbe8bb70.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Ukiah CA Single Family Homes For Sale - 81 Homes | Zillow' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
         <uix:NApplicationCard.TargetApp>
-          <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Edge" ContentHash="CEJJHxlDMEKEo4VeDW0_xw" IconBase64="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" InformativeScreenshot="ab4c75df8524447bd034cee52ce70e33.jpg" Reference="tiWUP15npUuneiMO909Lhw/RFftqTrJOUiOK54xpwLDuw" Selector="&lt;html app='msedge.exe' title='Zillow: Real Estate, Apartments, Mortgages &amp;amp; Home Values' /&gt;" Url="https://www.zillow.com/" Version="V2" />
+          <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Edge" IconBase64="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" InformativeScreenshot="45faa7e2d4afed729ff5b58152b6cf63.jpg" Selector="&lt;html app='msedge.exe' title='Zillow: Real Estate, Apartments, Mortgages &amp;amp; Home Values' /&gt;" Title="Zillow: Real Estate, Apartments, Mortgages &amp; Home Values" Url="https://www.zillow.com/" Version="V1" />
         </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
       </uix:NApplicationCard>
     </Sequence>
   </Sequence>
